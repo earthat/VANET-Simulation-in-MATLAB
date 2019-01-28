@@ -39,15 +39,15 @@ end
 Node = zeros(NumOfNodes,6); % 1:X, 2:Y, 3:updatedX, 4:updatedY, 5:direction
 %%%%%%%%%%%%%%%%%%%%%get random nodes%%%%%%%%%%%%%%%%%
 for node_index = 1:NumOfNodes
-    TempX = randint(1,1,[0,citysize]); 
+    TempX = randi([0,citysize],1,1); 
     if (rem(TempX,10)==0)
         %sprintf('TempX = %d\n',TempX);
         Node(node_index,1) = TempX;       %X co-ordinate in 1st column
-        Node(node_index,2) = randint(1,1,[0,citysize]); %Y co-ordinate in 2nd column
+        Node(node_index,2) = randi([0,citysize],1,1); %Y co-ordinate in 2nd column
         %sprintf('%d IF: X=%d Y=%d',node_index, Node(node_index,1),Node(node_index,2))
     else
-        Node(node_index,2) = 10*(randint(1,1,[0,citysize/10])); %Y co-ordinate in 2nd column 
-        Node(node_index,1) = randint(1,1,[0,citysize]); %X co-ordinate
+        Node(node_index,2) = 10*(randi([0,citysize/10],1,1)); %Y co-ordinate in 2nd column 
+        Node(node_index,1) = randi([0,citysize],1,1); %X co-ordinate
         %sprintf('%d ELSE: X= %d Y= %d',node_index, Node(node_index,1),Node(node_index,2))
     end
 end
